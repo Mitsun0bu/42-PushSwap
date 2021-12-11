@@ -6,7 +6,7 @@
 /*   By: llethuil <llethuil@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 12:21:40 by llethuil          #+#    #+#             */
-/*   Updated: 2021/12/11 09:41:15 by llethuil         ###   ########lyon.fr   */
+/*   Updated: 2021/12/11 16:01:44 by llethuil         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ t_stack;
 void	sort_xs_stack(t_stack *a);
 void	sort_s_stack(t_stack *a, t_stack *b);
 void	sort_l_stack(t_stack *a, t_stack *b);
+void	sort_xl_stack(t_stack *a, t_stack *b);
 
 /* double_operations.c */
 void 	swap_both(t_stack *a, t_stack *b);
@@ -68,6 +69,7 @@ void	stack_init(t_stack *a, t_stack *b, int argc, char **argv);
 int		check_if_sorted(t_stack *x);
 int		high_val_index(t_stack *x);
 int		low_val_index(t_stack *x);
+void	copy_stack(t_stack *x, int *tab);
 
 /* push_swap.c */
 int		main(int argc, char**argv);

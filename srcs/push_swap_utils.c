@@ -6,7 +6,7 @@
 /*   By: llethuil <llethuil@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 21:41:28 by llethuil          #+#    #+#             */
-/*   Updated: 2021/12/11 09:41:29 by llethuil         ###   ########lyon.fr   */
+/*   Updated: 2021/12/11 16:13:15 by llethuil         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,16 @@ int	low_val_index(t_stack *x)
 			i_low = i;
 	}
 	return (i_low);
+}
+
+void	copy_stack(t_stack *x, int *tab)
+{
+	int	i;
+
+	i = 0;
+	while(i < x->size)
+	{
+		tab[i] = x->tab[i];
+		i ++;
+	}
 }

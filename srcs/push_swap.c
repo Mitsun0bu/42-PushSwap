@@ -6,7 +6,7 @@
 /*   By: llethuil <llethuil@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:42:53 by llethuil          #+#    #+#             */
-/*   Updated: 2021/12/11 14:56:40 by llethuil         ###   ########lyon.fr   */
+/*   Updated: 2021/12/11 16:13:17 by llethuil         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,42 +24,54 @@ int main(int argc, char **argv)
 	stack_init(&a, &b, argc, argv);
 	push_swap(&a, &b);
 
-	// // START DISPLAY STACKS TEST //
+	// START DISPLAY STACKS TEST //
 
-	// int i_tab = 0;
-	// int i_arg = 0;
-	// printf("=== STACK A ===\n");
-	// while (i_arg < a.size)
-	// {
-	// 	printf("element %d = %d\n", i_tab, a.tab[i_tab]);
-	// 	i_tab++;
-	// 	i_arg++;
-	// }
-	// i_tab = 0;
-	// i_arg = 0;
-	// printf("=== STACK B ===\n");
-	// while (i_arg < b.size)
-	// {
-	// 	printf("element %d = %d\n", i_tab, b.tab[i_tab]);
-	// 	i_tab++;
-	// 	i_arg++;
-	// }
+	int i_tab = 0;
+	int i_arg = 0;
+	printf("=== STACK A ===\n");
+	while (i_arg < a.size)
+	{
+		printf("element %d = %d\n", i_tab, a.tab[i_tab]);
+		i_tab++;
+		i_arg++;
+	}
+	i_tab = 0;
+	i_arg = 0;
+	printf("=== STACK B ===\n");
+	while (i_arg < b.size)
+	{
+		printf("element %d = %d\n", i_tab, b.tab[i_tab]);
+		i_tab++;
+		i_arg++;
+	}
 
-	// // END DISPLAY TEST //
+	// END DISPLAY TEST //
 	return (0);
 }
 
 void push_swap(t_stack *a, t_stack *b)
 {
+	int	*tab;
+
+	tab = 0;
 	if (a->size < 2 || check_if_sorted(a) == 1)
 		return ;
 	else if (a->size < 4)
 		sort_xs_stack(a);
 	else if (a->size < 6)
 		sort_s_stack(a, b);
-	// else if (a-> size < 101)
-	// 	sort_l_stack(a, b);
-	// else
-	// 	sort_xl_stack(a, b);
+	else
+	{
+		tab = malloc(sizeof(int) * a->size);
+		if (!tab)
+			return ;
+		copy_stack(a, tab);
+		sort_tab(tab);
+		// if (a->size < 101)
+		// 	sort_l_stack(a, b);
+		// else
+		// 	sort_xl_stack(a, b);
+	}
+	free(tab);
 	return ;
 }
