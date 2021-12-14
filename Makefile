@@ -6,7 +6,7 @@
 #    By: llethuil <llethuil@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 11:59:53 by llethuil          #+#    #+#              #
-#    Updated: 2021/12/10 18:06:07 by llethuil         ###   ########lyon.fr    #
+#    Updated: 2021/12/14 15:44:41 by llethuil         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,16 +18,17 @@ INCS = 		./includes/push_swap.h \
 
 SRCS = 		./srcs/algos.c \
 			./srcs/double_operations.c \
-			./srcs/push_swap_parse.c \
-			./srcs/push_swap_utils.c \
+			./srcs/parsing.c \
 			./srcs/push_swap.c \
 			./srcs/simple_operations.c \
+			./srcs/utils.c \
+			./srcs/utils_2.c \
 
 OBJS = ${SRCS:.c=.o}
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -I ${INCS}
+CFLAGS = -Wall -Wextra -Werror -g -I ${INCS}
 
 RM = rm -f
 
@@ -49,7 +50,6 @@ clean:
 fclean: clean
 	${RM} ${LIBFT_AR}
 	${RM} ${NAME}
-
 
 re: fclean all
 

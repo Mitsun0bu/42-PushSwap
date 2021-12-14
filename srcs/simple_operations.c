@@ -6,13 +6,13 @@
 /*   By: llethuil <llethuil@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 21:39:39 by llethuil          #+#    #+#             */
-/*   Updated: 2021/12/09 21:39:48 by llethuil         ###   ########lyon.fr   */
+/*   Updated: 2021/12/14 12:57:14 by llethuil         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void swap(t_stack *x, char c)
+void	swap(t_stack *x, char c)
 {
 	int	temp;
 
@@ -27,7 +27,7 @@ void swap(t_stack *x, char c)
 		ft_putstr_fd("sb\n", 1);
 }
 
-void push(t_stack *dest, t_stack *src, char c)
+void	push(t_stack *dest, t_stack *src, char c)
 {
 	int	i;
 
@@ -48,7 +48,7 @@ void push(t_stack *dest, t_stack *src, char c)
 		ft_putstr_fd("pb\n", 1);
 }
 
-void rotate(t_stack *x, char c)
+void	rotate(t_stack *x, char c)
 {
 	int	buffer;
 	int	i;
@@ -66,7 +66,7 @@ void rotate(t_stack *x, char c)
 		ft_putstr_fd("rb\n", 1);
 }
 
-void rev_rotate(t_stack *x, char c)
+void	rev_rotate(t_stack *x, char c)
 {
 	int	buffer;
 	int	i;
@@ -82,4 +82,13 @@ void rev_rotate(t_stack *x, char c)
 		ft_putstr_fd("rra\n", 1);
 	else if (c == 'b')
 		ft_putstr_fd("rrb\n", 1);
+}
+
+void	swap_table(int *a, int *b)
+{
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
