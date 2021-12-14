@@ -6,7 +6,7 @@
 #    By: llethuil <llethuil@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 11:59:53 by llethuil          #+#    #+#              #
-#    Updated: 2021/12/14 15:44:41 by llethuil         ###   ########lyon.fr    #
+#    Updated: 2021/12/14 17:25:37 by llethuil         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS = 		./srcs/algos.c \
 			./srcs/parsing.c \
 			./srcs/push_swap.c \
 			./srcs/simple_operations.c \
-			./srcs/utils.c \
+			./srcs/utils_1.c \
 			./srcs/utils_2.c \
 
 OBJS = ${SRCS:.c=.o}
