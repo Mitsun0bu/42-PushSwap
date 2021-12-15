@@ -6,7 +6,7 @@
 #    By: llethuil <llethuil@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 11:59:53 by llethuil          #+#    #+#              #
-#    Updated: 2021/12/14 17:25:37 by llethuil         ###   ########lyon.fr    #
+#    Updated: 2021/12/15 11:30:44 by llethuil         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ OBJS = ${SRCS:.c=.o}
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -g -I ${INCS}
+CFLAGS = -Wall -Wextra -Werror -I ${INCS}
 
 RM = rm -f
 
