@@ -6,13 +6,13 @@
 /*   By: llethuil <llethuil@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 12:21:40 by llethuil          #+#    #+#             */
-/*   Updated: 2021/12/15 11:30:53 by llethuil         ###   ########lyon.fr   */
+/*   Updated: 2022/01/09 11:30:51 by llethuil         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* ************************************************************************** */
 /*                                                                            */
-/*                                  DEFINES                                   */
+/*                            ~ ~ ~ DEFINES ~ ~ ~                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 /* ************************************************************************** */
 /*                                                                            */
-/*                                  INCLUDES                                  */
+/*                            ~ ~ ~ INCLUDES ~ ~ ~                            */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 
 /* ************************************************************************** */
 /*                                                                            */
-/*                                  TYPEDEFS                                  */
+/*                            ~ ~ ~ TYPEDEFS ~ ~ ~                            */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct s_stack
 
 /* ************************************************************************** */
 /*                                                                            */
-/*                                  PROTOTYPES                                */
+/*                            ~ ~ ~ PROTOTYPES ~ ~ ~                          */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,11 @@ int		check_arg(int argc, char **argv);
 int		arg_is_nbr(int argc, char **argv);
 int		arg_is_int(int argc, char **argv);
 int		check_dub(int argc, char **argv);
-void	stack_init(t_stack *a, t_stack *b, int argc, char **argv);
+int		check_zero_case(int argc, char **argv);
 
 /* push_swap.c */
 int		main(int argc, char**argv);
+void	stack_init(t_stack *a, t_stack *b, int argc, char **argv);
 void	push_swap(t_stack *stack_a, t_stack *stack_b);
 
 /* simple_operations.c */

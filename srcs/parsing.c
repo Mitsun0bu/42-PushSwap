@@ -6,7 +6,7 @@
 /*   By: llethuil <llethuil@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 10:49:59 by llethuil          #+#    #+#             */
-/*   Updated: 2021/12/14 12:45:43 by llethuil         ###   ########lyon.fr   */
+/*   Updated: 2022/01/09 11:27:58 by llethuil         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	check_arg(int argc, char **argv)
 	if (arg_is_int(argc, argv) == 0)
 		return (-1);
 	if (check_dub(argc, argv) == 1)
+		return (-1);
+	if (check_zero_case(argc, argv) == 1)
 		return (-1);
 	return (0);
 }
@@ -98,21 +100,24 @@ int	check_dub(int argc, char **argv)
 	return (0);
 }
 
-void	stack_init(t_stack *a, t_stack *b, int argc, char **argv)
+int	check_zero_case(int argc, char **argv)
 {
-	int	i_tab;
-	int	i_arg;
+	int	zero;
+	int	minus_zero;
+	int	i;
 
-	a->size = argc - 1;
-	b->size = 0;
-	a->tab = ft_calloc(a->size, sizeof(int));
-	b->tab = ft_calloc(a->size, sizeof(int));
-	i_tab = 0;
-	i_arg = 1;
-	while (i_arg < argc)
+	zero = 0;
+	minus_zero = 0;
+	i = 1;
+	while (i < argc)
 	{
-		a->tab[i_tab] = ft_atoi(argv[i_arg]);
-		i_tab++;
-		i_arg++;
+		if (argv[i][0] != '-' && ft_atoi(argv[i]) == 0)
+			zero ++;
+		else if (argv[i][0] == '-' && ft_atoi(argv[i]) == 0)
+			minus_zero ++;
+		i ++;
 	}
+	if (zero == 1 && minus_zero == 1)
+		return (1);
+	return (0);
 }
