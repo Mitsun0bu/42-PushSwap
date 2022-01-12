@@ -6,7 +6,7 @@
 /*   By: llethuil <llethuil@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:42:53 by llethuil          #+#    #+#             */
-/*   Updated: 2022/01/09 11:04:04 by llethuil         ###   ########lyon.fr   */
+/*   Updated: 2022/01/12 14:27:31 by llethuil         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	t_stack	a;
 	t_stack	b;
 
-	if (argc < 2 || check_arg(argc, argv) == -1)
+	if (check_arg(argc, argv) == -1)
 	{
 		ft_putstr_fd("Error", 1);
 		return (0);
